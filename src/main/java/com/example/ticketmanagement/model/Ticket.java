@@ -1,8 +1,16 @@
 package com.example.ticketmanagement.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class Ticket {
     private Long id;
+
+    @NotBlank(message = "Description is mandatory")
+    @Size(min = 5, max = 1000, message = "Description must be between 5 and 1000 characters")
     private String description;
+
+    @NotBlank(message = "Status is mandatory")
     private String status;
 
     public Ticket(Long id, String description, String status) {
