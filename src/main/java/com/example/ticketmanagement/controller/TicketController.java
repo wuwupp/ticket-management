@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/tickets")
+@CrossOrigin(origins = "http://localhost:3000")  // Allow requests from React app
 public class TicketController {
 
     private final TicketService ticketService;
